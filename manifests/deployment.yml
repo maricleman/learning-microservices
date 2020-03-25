@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: "choresapp"
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: "choresapp"
+    spec:
+      containers:
+        - name: "choresapp"
+          image: "crmaricle.azurecr.io/choresapp"
+          ports:
+          - containerPort: 80
